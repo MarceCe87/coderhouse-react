@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import Item from "./components/Item/Item";
 import { BrowserRouter as Router,  Routes, Route } from 'react-router-dom';
 import Home from './pages';
 import Products from './pages/products';
