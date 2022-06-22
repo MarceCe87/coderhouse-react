@@ -5,12 +5,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {Button, CardActionArea, CardActions, TextField} from '@mui/material';
 
-const ItemCount = (props) => {
+const Item = (props) => {
   const { item, onAdd } = props;
   const [count, setCount] = useState(1);
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300 }}>
 		<CardActionArea>
 			<CardMedia component='img' image={item.image} alt='green iguana' />
 			<CardContent>
@@ -49,4 +49,4 @@ const ItemCount = (props) => {
   );
 }
 
-export default ItemCount;
+export default Item;
