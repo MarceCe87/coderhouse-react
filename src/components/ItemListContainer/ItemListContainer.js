@@ -2,9 +2,11 @@ import React from "react";
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = (props) => {
-    const { items, onAdd } = props;
+    const { onAdd } = props;
     return (
-        <ItemList items={items} onAdd={onAdd}/>
+        <div className="App-body">
+            <ItemList onAdd={onAdd}/>
+        </div>
     );
 };
 

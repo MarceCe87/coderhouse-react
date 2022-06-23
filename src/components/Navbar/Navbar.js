@@ -6,22 +6,22 @@ import logo from '../../images/logo.png';
 const Navbar = (props) => {
     const { cartItems } = props;
     return (
-        <Nav>
+      <Nav>
         <NavLink to='/'>
             <img src={logo} alt='logo' />
         </NavLink>
         <Bars />
         <NavMenu>
-          <NavLink to='/products' activeStyle>
+          <NavLink to='/products'>
             Products
           </NavLink>
-          <NavLink to='/sales' activeStyle>
+          <NavLink to='/sales' >
             Sales
           </NavLink>
-          <NavLink to='/contact-us' activeStyle>
+          <NavLink to='/contact' >
             Contact Us
           </NavLink>
-          <NavLink to='/sign-up' activeStyle>
+          <NavLink to='/sign-up'>
             Sign Up
           </NavLink>
         </NavMenu>
