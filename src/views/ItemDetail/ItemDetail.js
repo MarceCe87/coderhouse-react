@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router';
 import { Button, Card, CardActions, CardContent, CardMedia, TextField, Typography} from '@mui/material';
 import { Box } from '@mui/system';
+import axios from 'axios';
 import './ItemDetail.css';
 import CreditCard from '@mui/icons-material/Payment';
 import AccountBalanceWallet from '@mui/icons-material/AccountBalanceWallet';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const ItemDetail = () => {
 	const baseURL = "https://marcece87.github.io/Data/action-figures.json";
@@ -22,7 +23,7 @@ const ItemDetail = () => {
 			{item.filter(item => item.id === id).map((filteredItem) => {
 				return (
 					<div key={filteredItem.id}>
-						<Card variant="" sx={{ display: 'flex', background: '#e7e7e7', border: "none", boxShadow: "none"}}>
+						<Card variant="" sx={{ display: 'flex', border: "none", boxShadow: "none"}}>
 							<CardMedia
 								component="img"
 								sx={{ width: 550 }}
@@ -43,8 +44,14 @@ const ItemDetail = () => {
 									<Typography variant="subtitle1" color="blueviolet" component="div">
 										<CreditCard/>  <b>6 cuotas sin interes</b> de ${(filteredItem.price / 6).toFixed(2)}	
 									</Typography>
-									<Typography variant="subtitle1" color="blueviolet" component="div" marginBottom={10}>
+									<Typography variant="subtitle1" color="blueviolet" component="div" marginBottom={2}>
 										<AccountBalanceWallet/>  <b>10% de descuento</b>  pagando en Efectivo	
+									</Typography>
+									<Typography variant="subtitle1"  component="div" marginBottom={5} marginLeft={0.5} font-family="Montserrat" fontSize={15} color="darkblue" > 
+										<li>Series: {filteredItem.serie}</li>
+										<li>Character: {filteredItem.character}</li>
+										<li>Size: {filteredItem.size}</li>
+										<li>Brand: {filteredItem.brand}</li>
 									</Typography>
 									<CardActions >
 										<TextField
@@ -61,7 +68,8 @@ const ItemDetail = () => {
 											color="primary"
 										/>      
 										<Button
-											sx={{ background: '#0a0032', marginBottom: "25px"}} 										
+											sx={{ background: '#0a0032', marginBottom: "25px"}}
+											startIcon={<ShoppingCartIcon />} 										
 											variant="contained"
 											//onClick={() => onAdd(item)}
 											//disabled={(count > item.stock || count === 0) }									

@@ -4,7 +4,7 @@ import './ItemList.css';
 import axios from "axios";
 
 const ItemList = (props) => {
-    const {onAdd } = props;
+    const {category ,onAdd } = props;
     const [items, setItems] = useState([]);
     const baseURL = "https://marcece87.github.io/Data/action-figures.json";
 
@@ -16,10 +16,10 @@ const ItemList = (props) => {
 
     return (
         <div className="ItemList-container">
-            {items.map((item, index) => { 
+            { items.filter(item => category === "outlet" ? item.sale === "true" : item ).map((filteredItem) => {
                 return ( 
-                    <div key={item.id}>
-                        <Item key={item.id} item={item} onAdd={onAdd}></Item>
+                    <div key={filteredItem.id}>
+                        <Item key={filteredItem.id} item={filteredItem} onAdd={onAdd}></Item>
                     </div>            
                 );
             })}

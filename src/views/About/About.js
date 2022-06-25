@@ -5,12 +5,12 @@ const Contact = () => {
 	return (
 		<div className='warning'>
 			<div>
-				<h1>Contact Us</h1><br/><br/>
+				<h1>About</h1><br/><br/>
 			</div>			
 			<div>
 				<img src={warn} alt='under constructions' />
 			</div>			
-		</div>		
+		</div>
 	)
 };
 

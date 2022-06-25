@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import {Button, CardActionArea, CardActions, TextField} from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {Button, CardActionArea, CardActions, TextField} from '@mui/material';
-import { Link } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import './Item.css';
 
 const Item = (props) => {
   const { item, onAdd } = props;
   const [count, setCount] = useState(1);
 
+  const ApplyDiscount = (price) => {
+    let discount = price - (price * 0.10);
+    return discount.toFixed(2);
+  }
+
   return (
     <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
       <Link
-          to={`/detail/${item.id}`}
+          to={`/figures/${item.id}`}
           style={{ textDecoration: 'none'}}
       >
         <CardMedia component='img' image={item.image} alt={item.name} />
@@ -22,8 +29,11 @@ const Item = (props) => {
           <Typography align='center'  variant='body2' color="text.secondary" >
             {item.name}<br/><br/>
           </Typography>
-          <Typography align='center' variant='h6' color='darkblue'>
-            ${item.price}
+          <Typography align='center' variant='h6' color='darkblue' marginBottom={1}>
+            $ {item.sale === "true" ? ApplyDiscount(item.price) : item.price.toFixed(2)}  <del className='discount'>{item.sale === "true" ? item.price.toFixed(2) : ""} </del>
+          </Typography>
+          <Typography align='center'  variant='subtitle2' color="text.secondary" >
+            <b>6</b> cuotas sin interes de <b>${(item.price / 6).toFixed(2)}</b>
           </Typography>
         </CardContent>
       </Link>
@@ -41,7 +51,8 @@ const Item = (props) => {
               sx={{ paddingRight: 2, borderBlockColor: '#0a0032', }}
           />            
           <Button 
-              sx={{ background: '#0a0032'}} 	
+              sx={{ background: '#0a0032'}}
+              startIcon={<ShoppingCartIcon />}  	
               variant="contained"            
               onClick={() => onAdd(item)}
               disabled={(count > item.stock || count === 0) }
