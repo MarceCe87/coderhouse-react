@@ -8,9 +8,11 @@ import CreditCard from '@mui/icons-material/Payment';
 import AccountBalanceWallet from '@mui/icons-material/AccountBalanceWallet';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const ItemDetail = () => {
+const ItemDetail = (props) => {
 	const baseURL = "https://marcece87.github.io/Data/action-figures.json";
+	const { onAdd } = props;
 	const [item, setItem] = useState([]);
+	const [count, setCount] = useState(1);
 
 	let { id } = useParams();
 
@@ -38,7 +40,7 @@ const ItemDetail = () => {
 									<Typography variant="h5" color="text.secondary" component="div">
 										{filteredItem.brand}<br/><br/>
 									</Typography>
-									<Typography marginBottom={1} digitGroupSeparator="." variant="h4" color="darkblue" component="div">
+									<Typography marginBottom={1} variant="h4" color="darkblue" component="div">
 										${filteredItem.price.toFixed(2)}
 									</Typography>
 									<Typography variant="subtitle1" color="blueviolet" component="div">
@@ -47,7 +49,7 @@ const ItemDetail = () => {
 									<Typography variant="subtitle1" color="blueviolet" component="div" marginBottom={2}>
 										<AccountBalanceWallet/>  <b>10% de descuento</b>  pagando en Efectivo	
 									</Typography>
-									<Typography variant="subtitle1"  component="div" marginBottom={5} marginLeft={0.5} font-family="Montserrat" fontSize={15} color="darkblue" > 
+									<Typography variant="subtitle1"  component="div" marginBottom={5} marginLeft={0.5} fontFamily="Montserrat" fontSize={15} color="darkblue" > 
 										<li>Series: {filteredItem.serie}</li>
 										<li>Character: {filteredItem.character}</li>
 										<li>Size: {filteredItem.size}</li>
@@ -55,7 +57,7 @@ const ItemDetail = () => {
 									</Typography>
 									<CardActions >
 										<TextField
-											//onChange={e => setCount( parseInt(e.target.value))}
+											onChange={e => setCount( parseInt(e.target.value))}
 											helperText={"Stock: "+ filteredItem.stock} 
 											id={filteredItem.id}
 											label="Quantity"
@@ -71,8 +73,8 @@ const ItemDetail = () => {
 											sx={{ background: '#0a0032', marginBottom: "25px"}}
 											startIcon={<ShoppingCartIcon />} 										
 											variant="contained"
-											//onClick={() => onAdd(item)}
-											//disabled={(count > item.stock || count === 0) }									
+											onClick={() => onAdd(filteredItem)}
+											disabled={(count > filteredItem.stock || count === 0) }									
 										>
 											Add To Cart
 										</Button>

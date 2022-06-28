@@ -15,8 +15,19 @@ import About from './views/About/About';
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
   
-  const onAdd = (item) => {
+  const onAdd = (item) => {    
+    const exist = cartItems.find((x) => x.id === item.id);
+    console.log(`cartItems ${exist}`);
+    console.log(`item ${item.id}`);
+    if (exist) {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === item.id ? { ...exist, qty: exist.qty + 1 } : x
+        )
+      );
+    } else {
       setCartItems([...cartItems, { ...item, qty: 1 }]);
+    }
   };
 
   return (
@@ -29,7 +40,7 @@ const App = () => {
           <Route path='/category/outlet' element={<Outlet onAdd={onAdd} />} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/about' element={<About/>} />
-          <Route path='/figures/:id' element={<ItemDetail />} />
+          <Route path='/figures/:id' element={<ItemDetail onAdd={onAdd}/>} />
         </ Routes>
         <Footer/>
       </div>

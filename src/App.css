@@ -1,8 +1,13 @@
+.App{
+  justify-content:start;
+}
 .App-body {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Montserrat';
 }
 .App-header {
   background-color: #282c34;
@@ -48,6 +53,7 @@
   display: flex;
   justify-Content: center;
   align-Items: center;
+  font-family: "Montserrat";
 }
 
 .warning {

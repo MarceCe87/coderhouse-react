@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const Box = styled.div`
 	padding: 40px 1px;
 	background:  #ededed;
-	bottom: 0;
 	z-index: 10;
-
+	bottom:0;
+	
 	@media (max-width: 1000px) {
 		padding: 70px 30px;
 	}
@@ -57,4 +57,13 @@ export const Heading = styled.p`
 	color: #0a0032;
 	margin-bottom: 30px;
 	font-weight: bold;
+`;
+
+export const Copyright = styled.div`
+	padding: 13px;
+	font-size: 12px;
+	font-family: "Montserrat", Sans-serif;
+	background:  #0a0032;
+	color: #FFF;	
+	bottom: 0;
 `;

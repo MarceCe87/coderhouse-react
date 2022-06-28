@@ -25,11 +25,11 @@ const Item = (props) => {
           style={{ textDecoration: 'none'}}
       >
         <CardMedia component='img' image={item.image} alt={item.name} />
-        <CardContent sx={{alignContent: "center"}} >
-          <Typography align='center'  variant='body2' color="text.secondary" >
+        <CardContent sx={{alignContent: "center" }} >
+          <Typography align='center' variant='body2' color="text.secondary" component="div" style={{ minHeight: "60px" }}  >
             {item.name}<br/><br/>
           </Typography>
-          <Typography align='center' variant='h6' color='darkblue' marginBottom={1}>
+          <Typography align='center' variant='h6' color='darkblue' marginBottom={1} component="div">
             $ {item.sale === "true" ? ApplyDiscount(item.price) : item.price.toFixed(2)}  <del className='discount'>{item.sale === "true" ? item.price.toFixed(2) : ""} </del>
           </Typography>
           <Typography align='center'  variant='subtitle2' color="text.secondary" >
