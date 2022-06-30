@@ -4,9 +4,11 @@ import UserAvatar from "../UserAvatar/UserAvatar";
 import Cart from "../CartWidget/CartWidget";
 import Badge from '@mui/material/Badge';
 import logo from '../../images/logo.png';
+import React, { useContext } from 'react';
+import { CartContext } from '../../CartContext';
 
-const Navbar = (props) => {
-    const { cartItems } = props;
+const Navbar = () => {
+    const [cartItems] = useContext(CartContext);
 
     return (
       <Nav>
@@ -28,8 +30,8 @@ const Navbar = (props) => {
             About
           </NavLink>
         </NavMenu>
-        <NavBtn>
-          <Badge badgeContent={cartItems} color="primary" sx={{marginTop: "10px"}}>
+        <NavBtn >
+          <Badge badgeContent={cartItems.length} color="primary" sx={{marginTop: "6px"}}>
             <Cart/>{" "}
           </Badge>
           <UserAvatar/>

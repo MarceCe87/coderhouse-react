@@ -15,7 +15,7 @@ const Item = (props) => {
   const ApplyDiscount = (price) => {
     let discount = price - (price * 0.10);
     return discount.toFixed(2);
-  }
+  };
 
   return (
     <Card sx={{ maxWidth: 300 }}>
@@ -24,7 +24,7 @@ const Item = (props) => {
           to={`/figures/${item.id}`}
           style={{ textDecoration: 'none'}}
       >
-        <CardMedia component='img' image={item.image} alt={item.name} />
+        <CardMedia component='img' image={item.image} alt={item.name}/>
         <CardContent sx={{alignContent: "center" }} >
           <Typography align='center' variant='body2' color="text.secondary" component="div" style={{ minHeight: "60px" }}  >
             {item.name}<br/><br/>
@@ -55,8 +55,7 @@ const Item = (props) => {
               startIcon={<ShoppingCartIcon />}  	
               variant="contained"            
               onClick={() => onAdd(item)}
-              disabled={(count > item.stock || count === 0) }
-              
+              disabled={(count > item.stock || count === 0) }              
           >
             Add To Cart
           </Button>

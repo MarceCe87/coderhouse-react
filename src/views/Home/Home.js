@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../CartContext';
+import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 
 import ItemListContainer from '../../components/ItemListContainer/ItemListContainer';
 
-const Home = (props) => {
-	const { onAdd } = props;
+const Home = () => {
+	const [onAdd] = useContext(CartContext);
 	return (
 		<div>
-			<div className='title'>
-				<h1>Home</h1>
+			<ImageCarousel/>
+			<div style={{ textAlign: "center" }}>
+				<h2>Action Figures</h2>
+				<p>Easy to use, responsive and customizable carousel component for React Projects.</p>
 			</div>
 			<ItemListContainer category={"figures"} onAdd={onAdd} />
 		</div>
