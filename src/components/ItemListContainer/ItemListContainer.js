@@ -2,10 +2,10 @@ import React from "react";
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = (props) => {
-    const { category, onAdd } = props;
+    const { category } = props;
     return (
         <div className="App-body">
-            <ItemList category={category} onAdd={onAdd}/>
+            <ItemList category={category}/>
         </div>
     );
 };

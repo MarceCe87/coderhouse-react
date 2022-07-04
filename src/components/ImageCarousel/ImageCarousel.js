@@ -15,9 +15,6 @@ const ImageCarousel = () => {
         },
         {
           image: "https://bandaicollectors.com.mx/img/header-megahouse-1.jpg",
-        },
-        {
-          image: "https://bandaicollectors.com.mx/img/header-mcfarlane-4.jpg",
         }
       ];
     

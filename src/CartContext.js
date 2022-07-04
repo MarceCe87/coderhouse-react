@@ -3,9 +3,9 @@ import React, { createContext, useState } from 'react';
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-	const [cartItems, setCartItems] = useState(0);
+	const [cartItems, setCartItems] = useState([]);
 
-    function onAdd (item) { 
+    const  onAdd = (item) =>  { 
         console.log(item);   
         const exist = cartItems.find((x) => x.id === item.id);
 
@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
     };    
 
 	return (
-		<CartContext.Provider value={[cartItems, setCartItems, onAdd]}>
+		<CartContext.Provider value={{cartItems, setCartItems, onAdd}}>
 			{children}
 		</CartContext.Provider>
 	);

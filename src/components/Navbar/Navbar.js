@@ -8,7 +8,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../CartContext';
 
 const Navbar = () => {
-    const [cartItems] = useContext(CartContext);
+    const {cartItems} = useContext(CartContext);
 
     return (
       <Nav>
@@ -35,7 +35,7 @@ const Navbar = () => {
             <Cart/>{" "}
           </Badge>
           <UserAvatar/>
-        </NavBtn>        
+        </NavBtn>    
       </Nav>
     )
 };

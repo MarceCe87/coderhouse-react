@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {Button, CardActionArea, CardActions, TextField} from '@mui/material';
+import { CartContext } from '../../CartContext';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,8 +10,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Item.css';
 
 const Item = (props) => {
-  const { item, onAdd } = props;
+  const { item } = props;
   const [count, setCount] = useState(1);
+  const {onAdd} = useContext(CartContext);
 
   const ApplyDiscount = (price) => {
     let discount = price - (price * 0.10);
