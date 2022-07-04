@@ -31,7 +31,7 @@ const Navbar = () => {
           </NavLink>
         </NavMenu>
         <NavBtn >
-          <Badge badgeContent={cartItems.length} color="primary" sx={{marginTop: "6px"}}>
+          <Badge badgeContent={cartItems.length} color="primary" sx={{marginTop: "14px"}}>
             <Cart/>{" "}
           </Badge>
           <UserAvatar/>
