@@ -74,7 +74,7 @@ const ItemDetail = () => {
 											color="primary"
 										/>      
 										<Button
-											sx={{ background: '#0a0032', marginBottom: "25px"}}
+											sx={{ background: '#0a0032', marginBottom: "25px", borderRadius: 6}}
 											startIcon={<ShoppingCartIcon />} 										
 											variant="contained"
 											onClick={() => onAdd(item)}

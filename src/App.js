@@ -11,6 +11,7 @@ import Outlet from './views/Outlet/Outlet';
 import Figures from './views/Figures/Figures';
 import Contact from './views/Contact/Contact';
 import About from './views/About/About';
+import Cart from './views/Cart/Cart';
 import { Component } from 'react';
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
               <Route path='/category/outlet' element={<Outlet />} />
               <Route path='/contact' element={<Contact/>} />
               <Route path='/about' element={<About/>} />
+              <Route path='/cart' element={<Cart/>} />
               <Route path='/figures/:id' element={<ItemDetail/>} />
             </ Routes>
             <Footer/>

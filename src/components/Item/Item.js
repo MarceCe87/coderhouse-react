@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {Button, CardActionArea, CardActions, TextField} from '@mui/material';
+import {Button, CardActionArea, CardActions} from '@mui/material';
 import { CartContext } from '../../CartContext';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -11,7 +11,6 @@ import './Item.css';
 
 const Item = (props) => {
   const { item } = props;
-  const [count, setCount] = useState(1);
   const {onAdd} = useContext(CartContext);
 
   const ApplyDiscount = (price) => {
@@ -41,23 +40,12 @@ const Item = (props) => {
       </Link>
       </CardActionArea>
       <CardActions>
-          <TextField
-              onChange={e => setCount( parseInt(e.target.value))} 
-              id={item.id}              
-              label="Quantity"
-              type="number"
-              size="small"
-              defaultValue={1}
-              InputProps={{ inputProps: { min: 1, max: item.stock } }}
-              InputLabelProps={{ shrink: true, }}
-              sx={{ paddingRight: 2, borderBlockColor: '#0a0032', }}
-          />            
+           
           <Button 
-              sx={{ background: '#0a0032'}}
+              sx={{ borderRadius: 6, background: '#0a0032', width: "100%"}}
               startIcon={<ShoppingCartIcon />}  	
               variant="contained"            
-              onClick={() => onAdd(item)}
-              disabled={(count > item.stock || count === 0) }              
+              onClick={() => onAdd(item)}             
           >
             Add To Cart
           </Button>

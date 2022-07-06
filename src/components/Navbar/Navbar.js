@@ -1,7 +1,7 @@
 
 import { Nav, NavLink, Bars, NavMenu, NavBtn } from './NavbarElements.js';
 import UserAvatar from "../UserAvatar/UserAvatar";
-import Cart from "../CartWidget/CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 import Badge from '@mui/material/Badge';
 import logo from '../../images/logo.png';
 import React, { useContext } from 'react';
@@ -9,6 +9,15 @@ import { CartContext } from '../../CartContext';
 
 const Navbar = () => {
     const {cartItems} = useContext(CartContext);
+
+    const cartQty = () => {
+      let qty = 0;
+      cartItems.map((item) => (
+        qty += item.qty 
+      ))
+
+      return qty;
+    }
 
     return (
       <Nav>
@@ -30,9 +39,9 @@ const Navbar = () => {
             About
           </NavLink>
         </NavMenu>
-        <NavBtn >
-          <Badge badgeContent={cartItems.length} color="primary" sx={{marginTop: "14px"}}>
-            <Cart/>{" "}
+        <NavBtn  to='/cart/'>
+          <Badge badgeContent={cartQty()} color="primary" sx={{marginTop: "14px"}}>
+            <CartWidget/>{" "}
           </Badge>
           <UserAvatar/>
         </NavBtn>    
