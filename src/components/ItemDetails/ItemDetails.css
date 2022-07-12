@@ -151,6 +151,9 @@
 .button-demo .template .p-button.discord:focus {
     box-shadow: 0 0 0 1px var(--bluegray-500);
 }
+.image-gallery {
+    width: 700px;
+}
 @media screen and (max-width: 960px) {
     .button-demo .p-button {
         margin-bottom: 0.5rem;

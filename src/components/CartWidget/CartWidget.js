@@ -40,8 +40,8 @@ const CartWidget = () => {
           <ListItem  
             sx={{ background:"#0a0032", color: "white", height: 70, marginRight: 1}} 
             secondaryAction={
-              <IconButton  edge="end" aria-label="delete">
-                <Close sx={{ color: 'white' }} onClick={toggleDrawer(anchor, false)}/>
+              <IconButton  edge="end" aria-label="delete" onClick={toggleDrawer(anchor, false)}>
+                <Close sx={{ color: 'white' }}/>
               </IconButton>
             } 
           >
@@ -74,7 +74,6 @@ const CartWidget = () => {
                 </ListItem>
                 
               ))
-              
             )
             :
             <img
@@ -85,7 +84,7 @@ const CartWidget = () => {
           } 
           <ListItem>
             <ListItemText>
-              {cartItems.length > 0 ? `Total Amount: ${getTotalAmount()}`: ""} 
+              {cartItems.length > 0 ? `Total Amount: US${getTotalAmount()}`: ""} 
             </ListItemText>
           </ListItem>
         </List>

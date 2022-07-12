@@ -53,7 +53,7 @@ export const CartProvider = ({ children }) => {
 	return (
 		<CartContext.Provider value={{cartItems, setCartItems, onAdd, onRemove, onDelete}}>
 			{children}
-            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}  anchorOrigin={{ vertical: "top", horizontal: "left" }}>
               <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                 Item Added to the cart!
               </Alert>

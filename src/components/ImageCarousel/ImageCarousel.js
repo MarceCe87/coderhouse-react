@@ -30,10 +30,7 @@ const ImageCarousel = () => {
     return ( 
         <div className="App">
             <div style={{ textAlign: "center" }}>
-
-                <div style={{
-                    
-                }}>
+                <div>
                     <Carousel
                         data={data}
                         time={3000}

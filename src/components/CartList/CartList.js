@@ -26,11 +26,11 @@ const CartList = (state) => {
         <List >
             {cartItems.length > 0 
             ?
-                (cartItems.map((item, index) => (
+                (cartItems.map((item) => (
                 <ListItem key={item.id} >
                     <ListItemAvatar>
                         <Avatar alt={item.name}
-                        src={item.image}
+                        src={item.images[0]}
                         variant="square"
                         sx={{ width: 80, height: 80, marginRight: 1 }} 
                         />
@@ -52,7 +52,7 @@ const CartList = (state) => {
                         } 
                     /> 
                     <Typography variant="h6">
-                        {cartItems.length > 0 ? `$${(item.price * item.qty).toFixed(2)}`: ""} 
+                        {cartItems.length > 0 ? `US$${(item.price * item.qty).toFixed(2)}`: ""} 
                     </Typography>    
                             
                 </ListItem>                
@@ -77,10 +77,10 @@ const CartList = (state) => {
                     <Divider/> 
                     <ListItemText sx={{textAlign: "right",  marginTop: 2,  marginBottom: 2}}>
                         <Typography variant="h5" >
-                            {cartItems.length > 0 ? `Total Amount: $${getTotalAmount().toFixed(2)}`: ""} 
+                            {cartItems.length > 0 ? `Total Amount: US$${getTotalAmount().toFixed(2)}`: ""} 
                         </Typography>
                         <Typography   variant='subtitle2' color="text.secondary" >
-                            o en <b>6</b> cuotas sin interes de $ <b>{(getTotalAmount()/ 6).toFixed(2)}</b>
+                            or <b>6</b> installments of US$ <b>{(getTotalAmount()/ 6).toFixed(2)}</b>
                         </Typography>
                     </ListItemText>
                     <Divider/> 
