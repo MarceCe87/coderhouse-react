@@ -42,6 +42,10 @@ export const CartProvider = ({ children }) => {
         }
     };
 
+    const onCheckOut = () =>{
+        setCartItems([]);
+    };
+
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
         return;
@@ -51,7 +55,7 @@ export const CartProvider = ({ children }) => {
     };
 
 	return (
-		<CartContext.Provider value={{cartItems, setCartItems, onAdd, onRemove, onDelete}}>
+		<CartContext.Provider value={{cartItems, setCartItems, onAdd, onRemove, onDelete, onCheckOut}}>
 			{children}
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}  anchorOrigin={{ vertical: "top", horizontal: "left" }}>
               <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
