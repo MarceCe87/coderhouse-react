@@ -11,11 +11,13 @@ export const CartProvider = ({ children }) => {
         const exist = cartItems.find((x) => x.id === item.id);
 
         if (exist) {
-            setCartItems(
-                cartItems.map((x) =>
-                x.id === item.id ? { ...exist, qty: exist.qty + 1 } : x
-                )
-            );
+            if(exist.qty < exist.stock){
+                setCartItems(
+                    cartItems.map((x) =>
+                    x.id === item.id ? { ...exist, qty: exist.qty + 1 } : x
+                    )
+                );
+            }
         } else {
             setCartItems([...cartItems, { ...item, qty: 1 }]);
             setOpen(true);
