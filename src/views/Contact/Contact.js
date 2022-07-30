@@ -3,7 +3,7 @@ import warn from '../../images/UC.png';
 
 const Contact = () => {
 	return (
-		<div className='warning'>
+		<div className="App-body">
 			<div>
 				<h1>Contact Us</h1><br/><br/>
 			</div>			

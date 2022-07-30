@@ -2,10 +2,10 @@ import React from 'react';
 
 import ItemListContainer from '../../components/ItemListContainer/ItemListContainer';
 
-const Outlet = (props) => {
+const Figures = (props) => {
 	const { onAdd } = props;
 	return (
-		<div>
+		<div className='text-title'>
 			<div className='title'>
 				<h1>Action Figures</h1>
 			</div>
@@ -14,4 +14,4 @@ const Outlet = (props) => {
 	);
 };
 
-export default Outlet;
+export default Figures;

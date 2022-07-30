@@ -3,13 +3,13 @@ import ItemListContainer from '../../components/ItemListContainer/ItemListContai
 
 const Home = () => {
 	return (
-		<div>
-			<ImageCarousel/>
-			<div style={{ textAlign: "center" }}>
-				<h2>Action Figures</h2>
-				<p>Easy to use, responsive and customizable carousel component for React Projects.</p>
+		<div className='text-title'>
+			<ImageCarousel/>  
+			<div >
+				<h2>Deals of the week</h2>
+				<p>Every week you will find new deals.</p>
 			</div>
-			<ItemListContainer category={"figures"} />
+			<ItemListContainer category={"outlet"} />
 		</div>
 	);
 };

@@ -11,7 +11,7 @@ import Outlet from './views/Outlet/Outlet';
 import Figures from './views/Figures/Figures';
 import Contact from './views/Contact/Contact';
 import About from './views/About/About';
-import Cart from './views/Cart/Cart';
+import Checkout from './views/Checkout/Checkout';
 import { Component } from 'react';
 
 class App extends Component {
@@ -21,14 +21,14 @@ class App extends Component {
     return (
     <CartProvider>
       <Router onUpdate={() => window.scrollTo(0, 0)} >      
-            <Navbar/>       
+            <Navbar/>    
             <Routes >
               <Route path='/' element={<Home />} />
               <Route path='/category/figures' element={<Figures />} />
               <Route path='/category/outlet' element={<Outlet />} />
               <Route path='/contact' element={<Contact/>} />
               <Route path='/about' element={<About/>} />
-              <Route path='/cart' element={<Cart/>} />
+              <Route path='/checkout' element={<Checkout/>} />
               <Route path='/figures/:id' element={<ProductDetail/>} />
             </ Routes>
             <Footer/>      

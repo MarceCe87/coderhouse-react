@@ -103,7 +103,7 @@ const ItemDetails = () => {
 											<CreditCard/>  <b>6 installments</b> of US${(item.price / 6).toFixed(2)}	
 										</Typography>
 										<Typography variant="subtitle1" color="blueviolet" component="div" marginBottom={2}>
-											<AccountBalanceWallet/>  <b>10% de descuento</b>  pagando en Efectivo	
+											<AccountBalanceWallet/>  <b>10% discount</b>  paying in cash	
 										</Typography>
 										<Typography variant="subtitle1"  component="div" marginBottom={5} marginLeft={0.5} fontFamily="Montserrat" fontSize={15} color="darkblue" > 
 											<li>Series: {item.serie}</li>
@@ -141,7 +141,6 @@ const ItemDetails = () => {
 						</div>	
 					);
 				}
-			
 			)}
 		</div>
 	);

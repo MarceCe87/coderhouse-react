@@ -5,7 +5,7 @@ import ItemListContainer from '../../components/ItemListContainer/ItemListContai
 const Outlet = (props) => {
 	const { onAdd } = props;
 	return (
-		<div>
+		<div className='text-title'>
 			<div className='title'>
 				<h1>Outlet</h1>
 			</div>

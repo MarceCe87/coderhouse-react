@@ -8,6 +8,7 @@
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Montserrat';
+  background-color: #f9f9f9;
 }
 .App-header {
   background-color: #282c34;
@@ -59,6 +60,11 @@
 .warning {
   text-align: center;
   justify-Content: center;
+}
+
+.text-title{
+  text-align: center;
+  background-color: #f9f9f9;
 }
 
 @keyframes App-logo-spin {
