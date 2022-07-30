@@ -41,7 +41,7 @@ const CartList = (state) => {
                                         <ButtonGroup variant="outlined"size="small" >
                                             <Button  onClick={()=> onRemove(item)}>-</Button>
                                             <Button>{item.qty}</Button>
-                                            <Button onClick={()=> onAdd(item)}>+</Button>
+                                            <Button onClick={()=> onAdd(item, 0)}>+</Button>
                                         </ButtonGroup>
                                         <Button  onClick={()=> onDelete(item)}>
                                             Remove

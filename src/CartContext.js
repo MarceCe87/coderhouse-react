@@ -7,19 +7,21 @@ export const CartProvider = ({ children }) => {
 	const [cartItems, setCartItems] = useState([]);
     const [open, setOpen] = React.useState(false);
 
-    const  onAdd = (item) =>  { 
+    const  onAdd = (item, quantity) =>  { 
         const exist = cartItems.find((x) => x.id === item.id);
 
+        quantity = quantity > 0 ? quantity : 1;
+
         if (exist) {
-            if(exist.qty < exist.stock){
+            if(exist.qty + quantity <= exist.stock ){
                 setCartItems(
                     cartItems.map((x) =>
-                    x.id === item.id ? { ...exist, qty: exist.qty + 1 } : x
+                    x.id === item.id ? { ...exist, qty: exist.qty + quantity } : x
                     )
                 );
             }
         } else {
-            setCartItems([...cartItems, { ...item, qty: 1 }]);
+            setCartItems([...cartItems, { ...item, qty: quantity }]);
             setOpen(true);
         }
     };

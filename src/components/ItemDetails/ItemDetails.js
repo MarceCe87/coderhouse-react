@@ -129,7 +129,7 @@ const ItemDetails = () => {
 												sx={{ background: '#0a0032', marginBottom: "25px", borderRadius: 6}}
 												startIcon={<ShoppingCartIcon />} 										
 												variant="contained"
-												onClick={() => onAdd(item)}
+												onClick={() => onAdd(item, count)}
 												disabled={(count > item.stock || count === 0) }									
 											>
 												Add To Cart
