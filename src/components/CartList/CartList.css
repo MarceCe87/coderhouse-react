@@ -1,12 +1,12 @@
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width:90%;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 90%;
+}
 
-  .photo {
-    height: auto;
-    width: auto; 
+.photo {
+  height: auto;
+  width: auto;
 }

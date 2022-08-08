@@ -1,69 +1,67 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Box = styled.div`
-	padding: 40px 1px;
-	background:  #ededed;
-	z-index: 10;
-	bottom:0;
-	
-	@media (max-width: 1000px) {
-		padding: 70px 30px;
-	}
+  padding: 40px 1px;
+  background: #ededed;
+  z-index: 10;
+  bottom: 0;
+
+  @media (max-width: 1000px) {
+    padding: 70px 30px;
+  }
 `;
 
 export const Container = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: left;
-	max-width: 1000px;
-	margin: 0 auto;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  max-width: 1000px;
+  margin: 0 auto;
+`;
 
 export const Column = styled.div`
-	display: flex;
-	flex-direction: column;
-	text-align: left;
-	width: 400px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 400px;
 `;
 
 export const Row = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fill,
-							minmax(185px, 1fr));
-	grid-gap: 220px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-gap: 220px;
 
-	@media (max-width: 1000px) {
-		grid-template-columns: repeat(auto-fill,
-							minmax(200px, 1fr));
-	}
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 `;
 
 export const FooterLink = styled.a`
-	color: #0a0032;
-	margin-bottom: 20px;
-	font-family: "Montserrat", Sans-serif;
-	font-size: 14px;
-	text-decoration: none;
+  color: #0a0032;
+  margin-bottom: 20px;
+  font-family: "Montserrat", Sans-serif;
+  font-size: 14px;
+  text-decoration: none;
 
-	&:hover {
-		color: grey;
-		transition: 200ms ease-in;
-	}
+  &:hover {
+    color: grey;
+    transition: 200ms ease-in;
+  }
 `;
 
 export const Heading = styled.p`
-	font-size: 20px;
-	font-family: "Montserrat", Sans-serif;
-	color: #0a0032;
-	margin-bottom: 30px;
-	font-weight: bold;
+  font-size: 20px;
+  font-family: "Montserrat", Sans-serif;
+  color: #0a0032;
+  margin-bottom: 30px;
+  font-weight: bold;
 `;
 
 export const Copyright = styled.div`
-	padding: 13px;
-	font-size: 12px;
-	font-family: "Montserrat", Sans-serif;
-	background:  #0a0032;
-	color: #FFF;	
-	bottom: 0;
+  padding: 13px;
+  font-size: 12px;
+  font-family: "Montserrat", Sans-serif;
+  background: #0a0032;
+  color: #fff;
+  bottom: 0;
 `;

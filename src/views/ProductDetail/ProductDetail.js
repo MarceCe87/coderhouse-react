@@ -1,9 +1,7 @@
-import ItemDetails from '../../components/ItemDetails/ItemDetails';
+import ItemDetails from "../../components/ItemDetails/ItemDetails";
 
-const ProductDetail = () => {	
-	return (
-		<ItemDetails />
-	);
+const ProductDetail = () => {
+  return <ItemDetails />;
 };
 
 export default ProductDetail;

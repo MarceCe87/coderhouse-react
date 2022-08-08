@@ -1,7 +1,6 @@
 .ItemList-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	margin: 40px 0 40px 0;
-	gap: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 40px 0 40px 0;
+  gap: 40px;
 }
-
