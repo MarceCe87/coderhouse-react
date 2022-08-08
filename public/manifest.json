@@ -1,6 +1,6 @@
 {
-  "short_name": "Gomu Comics",
-  "name": "Gomu Comics",
+  "short_name": "gomucomics",
+  "name": "gomucomics",
   
   "start_url": ".",
   "display": "standalone",
